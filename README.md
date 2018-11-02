@@ -6,7 +6,7 @@ This is a small collection of scripts to manage ROS bag files. You can trim a ba
 * Checkout the bagedit node to catkin workspace folder:
 ```
 cd ~/catkin_ws/src
-git clone https://daniel_dube@bitbucket.org/daniel_dube/bagedit
+git clone https://github.com/MHarbi/bagedit.git
 cd ~/catkin_ws
 cd ~/catkin_make
 ```
