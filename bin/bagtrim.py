@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import print_function
 import sys
 import roslib; roslib.load_manifest('bagedit')
 import rospy
@@ -56,10 +57,10 @@ def trim_bag(bagfile, start_time, end_time, outfile = None,
         raise SystemExit("End time (%f) is lower than start time (%f)"%\
             (start_time.to_sec(), end_time.to_sec()))
     #output some information
-    print "cut from %fs to %fs"%(
+    print("cut from %fs to %fs"%(
         (start_time - limits[0]).to_sec(),
-        (end_time - limits[0]).to_sec())
-    print "writing to %s."%outfile
+        (end_time - limits[0]).to_sec()))
+    print("writing to %s."%outfile)
     #copy bagfile
     outbag = rosbag.Bag(outfile, 'w')
     try:
@@ -84,8 +85,8 @@ if __name__ == "__main__":
     args = parse_args()
     if args.s == None and args.e == None:
         limits = get_limits(args.bagfile)
-        print "length of %s: %f seconds"%\
-            (args.bagfile, (limits[1] - limits[0]).to_sec())
+        print("length of %s: %f seconds"%\
+            (args.bagfile, (limits[1] - limits[0]).to_sec()))
         raise SystemExit()
     trim_bag(args.bagfile, 
         start_time = args.s, 
